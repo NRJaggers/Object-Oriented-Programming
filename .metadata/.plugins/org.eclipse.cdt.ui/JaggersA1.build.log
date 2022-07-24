@@ -1,0 +1,7 @@
+19:48:51 **** Rebuild of configuration Debug for project JaggersA1 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\JaggersA1.o" "..\\src\\JaggersA1.cpp" 
+g++ -o JaggersA1.exe "src\\JaggersA1.o" 
+
+19:48:53 Build Finished. 0 errors, 0 warnings. (took 1s.485ms)
+

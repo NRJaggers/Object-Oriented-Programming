@@ -1,0 +1,24 @@
+//============================================================================
+// Name        : Sandbox.cpp
+// Author      : Nathan Jaggers
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int *p ;
+
+	p = new int[500] ;
+
+	p[0] = 5 ;
+	p[1] = 5 ;
+
+	cout<< p[0] <<"\t"<< p[1] ;
+
+	return 0;
+}

@@ -1,0 +1,5 @@
+10:07:06 **** Clean-only build of configuration Debug for project 10-16_Operator Overloading ****
+rm -rf "src/10-16_Operator Overloading.o" src/GroceryItem.d "src/10-16_Operator Overloading.d" src/GroceryItem.o "10-16_Operator Overloading.exe" 
+
+10:07:07 Build Finished. 0 errors, 0 warnings. (took 192ms)
+

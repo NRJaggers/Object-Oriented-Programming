@@ -1,0 +1,5 @@
+18:25:32 **** Clean-only build of configuration Debug for project 10-09_Inline&Static ****
+rm -rf src/10-09_Inline&Static.d 10-09_Inline&Static.exe src/10-09_Inline&Static.o 
+
+18:25:33 Build Finished. 0 errors, 0 warnings. (took 149ms)
+

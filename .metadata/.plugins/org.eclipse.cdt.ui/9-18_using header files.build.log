@@ -1,0 +1,7 @@
+10:11:38 **** Incremental Build of configuration Debug for project 9-18_using header files ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\9-18_using header files.o" "..\\src\\9-18_using header files.cpp" 
+g++ -o "9-18_using header files.exe" "src\\9-18_using header files.o" "src\\myfunc.o" 
+
+10:11:39 Build Finished. 0 errors, 0 warnings. (took 720ms)
+

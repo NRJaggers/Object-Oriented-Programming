@@ -1,0 +1,14 @@
+17:44:26 **** Rebuild of configuration Debug for project JaggersA5.0 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\goodbye.o" "..\\src\\goodbye.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\JaggersA5.o" "..\\src\\JaggersA5.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\welcome.o" "..\\src\\welcome.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bus.o" "..\\src\\Bus.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\displayCH.o" "..\\src\\displayCH.cpp" 
+g++ -o JaggersA5.0.exe "src\\Bus.o" "src\\JaggersA5.o" "src\\displayCH.o" "src\\goodbye.o" "src\\welcome.o" 
+src\Bus.o:Bus.cpp:(.rdata$.refptr._ZN3Bus17averageBusMileageE[.refptr._ZN3Bus17averageBusMileageE]+0x0): undefined reference to `Bus::averageBusMileage'
+src\Bus.o:Bus.cpp:(.rdata$.refptr._ZN3Bus8busCountE[.refptr._ZN3Bus8busCountE]+0x0): undefined reference to `Bus::busCount'
+collect2.exe: error: ld returned 1 exit status
+
+17:44:29 Build Finished. 0 errors, 0 warnings. (took 3s.172ms)
+

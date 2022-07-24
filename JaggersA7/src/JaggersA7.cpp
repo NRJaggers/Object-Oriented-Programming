@@ -1,0 +1,198 @@
+//============================================================================
+// Name        : JaggersA7.cpp
+// Author      : Nathan Jaggers
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <fstream>
+#include "welcome.h"
+#include "goodbye.h"
+#include "Vehicle&More.h"
+using namespace std;
+
+int main()
+{
+	//declarations
+		Vehicle * allVehicles[50] = {nullptr} ;
+		string	line, vID, vMan, vLSD, vLID, bTS, rMT, input;
+		int vCap, index, bMile, rPOD, hAFFT, hET, position ;
+		char vStat, bFT ;
+		bool firstBus, firstRailcar, firstHelicopter, found ;
+
+
+	//welcome
+	  welcome() ;
+
+
+	//open input file
+	  ifstream inFile ;
+	  inFile.open("C:\\COMSC200\\a7data.txt") ;
+		  if (!inFile.is_open())
+		  {
+			  cout << "There was an error opening the file.\nPlease check that "
+				   << "the file path is correct and \nthat the file is not locked, then try again." ;
+		  }
+
+	//file input
+
+	  index = 0 ;
+	  while(getline(inFile,line))
+		  {
+
+			  vID   = line.substr(0,4) ;
+			  vMan  = line.substr(4,15) ;
+			  vLSD  = line.substr(19,8) ;
+			  vLID  = line.substr(27,8) ;
+			  vCap  = stoi(line.substr(35,3)) ;
+			  vStat = line[38] ;
+
+		  	  if (line[0] == 'B')
+				  {
+		  		  	  //make bus object
+		  		  	  //cout << "creating Bus object\n" ;
+
+		  		  	  bMile = stoi(line.substr(39,7));
+		  		  	  bTS   = line.substr(46,9);
+		  		  	  bFT   = line[55];
+
+		  		  	  allVehicles[index] = new Bus(vID, vMan, vLSD, vLID, vCap, vStat, bMile, bTS, bFT) ;
+				  }
+		  	  else if (line[0] == 'R')
+		  	  	  {
+		  		  	  //make railcar object
+		  		  	  //cout << "creating Railcar object\n" ;
+
+		  		  	  rPOD = stoi(line.substr(39,3));
+		  		  	  rMT  = line.substr(42,5);
+
+		  		  	  allVehicles[index] = new Railcar(vID, vMan, vLSD, vLID, vCap, vStat, rPOD, rMT) ;
+		  	  	  }
+		  	  else if (line[0] == 'H')
+		  	  	  {
+		  		  	  //make helicopter object
+		  		  	  //cout << "creating Helicopter object\n" ;
+
+		  		  	  hAFFT = stoi(line.substr(39,5)) ;
+		  		  	  hET	= stoi(line.substr(44,4));
+
+		  		  	  allVehicles[index] = new Helicopter(vID, vMan, vLSD, vLID, vCap, vStat, hAFFT, hET) ;
+		  	  	  }
+		  	  else
+		  	  	  {
+		  		  	  cout << "creating Vehicle object\n" ;
+		  		  	  allVehicles[index] = new Vehicle(vID, vMan, vLSD, vLID, vCap, vStat) ;
+		  	  	  }
+
+		  	  index++ ;
+		  }
+
+	//close file
+	  inFile.close() ;
+
+    //display data
+	  index = 0 ;
+	  firstBus = firstRailcar = firstHelicopter = true ;
+	  while (allVehicles[index] != nullptr)
+	  {
+		  if ((allVehicles[index]->getVehicleID()[0] == 'B') and (firstBus))
+			  {
+			  	  allVehicles[index]->displayHead();
+			  	  firstBus = false ;
+			  }
+		  else if ((allVehicles[index]->getVehicleID()[0] == 'R') and (firstRailcar))
+			  {
+				  allVehicles[index]->displayHead();
+				  firstRailcar = false ;
+			  }
+		  else if ((allVehicles[index]->getVehicleID()[0] == 'H') and (firstHelicopter))
+			  {
+				  allVehicles[index]->displayHead();
+				  firstHelicopter = false ;
+			  }
+		  else {}
+
+		  allVehicles[index]->displayData();
+		  cout << endl ;
+
+		  index++ ;
+	  }
+
+	//user input
+	  cout << "\nEnter a Bus ID to search for :" ;
+	  cin  >> input ;
+	  index = 0 ;
+	  found = false ;
+
+	  while (input != "00000")
+		{
+		  while (allVehicles[index] != nullptr)
+		  		  {
+
+			  	  	  if (allVehicles[index]->getVehicleID() == input)
+						  {
+								found = true ;
+								position = index ;
+						  }
+			  	  	  allVehicles[index]->maintenance() ;
+			  	  	  index++ ;
+
+		  		  }
+		  if (found)
+			  {
+				  allVehicles[position]->displayHead();
+				  allVehicles[position]->displayData();
+			  }
+		  else
+			  {
+				  cout << "No matching Vehicle ID.\nPlease Try again\n" ;
+			  }
+
+		  cout << "\n\nEnter a Bus ID to search for :" ;
+		  cin  >> input ;
+		  found = false ;
+		  index = 0 ;
+		}
+
+	//display data
+	  index = 0 ;
+	  firstBus = firstRailcar = firstHelicopter = true ;
+	  while (allVehicles[index] != nullptr)
+		  {
+			  if ((allVehicles[index]->getVehicleID()[0] == 'B') and (firstBus))
+				  {
+					  allVehicles[index]->displayHead();
+					  firstBus = false ;
+				  }
+			  else if ((allVehicles[index]->getVehicleID()[0] == 'R') and (firstRailcar))
+				  {
+					  allVehicles[index]->displayHead();
+					  firstRailcar = false ;
+				  }
+			  else if ((allVehicles[index]->getVehicleID()[0] == 'H') and (firstHelicopter))
+				  {
+					  allVehicles[index]->displayHead();
+					  firstHelicopter = false ;
+				  }
+			  else {}
+
+			  allVehicles[index]->displayData();
+			  cout << endl ;
+
+			  index++ ;
+		  }
+
+	//goodbye
+	  goodbye() ;
+
+	//Deallocate memory
+	  index = 0 ;
+	  while (allVehicles[index] != nullptr)
+	  		  {
+		  	  	  delete allVehicles[index] ;
+	  			  index++ ;
+	  		  }
+	return 0;
+}

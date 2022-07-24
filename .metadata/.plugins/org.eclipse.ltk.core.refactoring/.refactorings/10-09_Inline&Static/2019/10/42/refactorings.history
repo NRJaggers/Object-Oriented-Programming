@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;10-09_Inline&amp;Static/src/10-09_.cpp&apos; to &apos;10-09_Inline&amp;Static.cpp&apos;" description="Rename resource &apos;10-09_.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/10-09_.cpp" name="10-09_Inline&amp;Static.cpp" stamp="1571065112907" updateReferences="true"/>
+</session>

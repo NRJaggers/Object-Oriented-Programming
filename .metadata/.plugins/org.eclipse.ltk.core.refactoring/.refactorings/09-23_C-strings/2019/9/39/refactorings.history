@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;9-23_C-strings/src/9-23_Temp.cpp&apos; to &apos;9-23_C-strings.cpp&apos;" description="Rename resource &apos;9-23_Temp.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/9-23_Temp.cpp" name="9-23_C-strings.cpp" stamp="1569256371570" updateReferences="true"/>
+</session>

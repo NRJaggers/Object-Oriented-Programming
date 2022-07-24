@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;9-4_Name&apos; to &apos;9-4_Memory Review&apos;" description="Rename resource &apos;9-4_Name&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/9-4_Name" name="9-4_Memory Review" stamp="1567613741272" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;9-4_Name&apos; to &apos;9-4_Pointers and Functions&apos;" description="Rename resource &apos;9-4_Name&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/9-4_Name" name="9-4_Pointers and Functions" stamp="1567618125056" updateReferences="true"/>
+</session>

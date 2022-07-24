@@ -1,0 +1,147 @@
+/*
+ * Vehicle&More.h
+ *
+ *  Created on: Nov 12, 2019
+ *      Author: Nathan Jaggers
+ */
+#include <iostream>
+using namespace std;
+
+
+#ifndef VEHICLE_MORE_H_
+#define VEHICLE_MORE_H_
+
+class Vehicle
+{
+private:
+	string 	vehicleID ;
+	string 	manufacturer ;
+	string 	lastServiceDate ;	//string in YYYYMMDD form
+	string 	lastInspectDate ;	//string in YYYYMMDD form
+	int	   	capacity ;
+	char   	status ;			// ‘A’ - vehicle is active and may be scheduled
+	 	 	 	 	 	 	 	// ‘I’ - vehicle is inactive and is excluded from scheduling
+								// ‘M’ - vehicle is currently in maintenance and is excluded from
+								// scheduling
+
+public:
+	//setters
+		void	setVehicleID(string) ;
+		void	setManufacturer(string) ;
+		void	setLastServiceDate(string) ;
+		void	setLastInspectDate(string) ;
+		void	setCapacity(int) ;
+		void	setStatus(char) ;
+
+	//getters
+		string	getVehicleID() ;
+		string	getManufacturer() ;
+		string	getLastServiceDate() ;
+		string	getLastInspectDate() ;
+		int		getCapacity() ;
+		char	getStatus() ;
+
+	//constructors
+		Vehicle() ;
+		Vehicle(string, string, string, string, int, char) ;
+
+	//member functions
+		virtual void displayHead() ;
+		virtual void displayData() ;
+		virtual void maintenance() ;
+
+	//destructor
+		virtual ~Vehicle() {} ;
+};
+
+class Bus : public Vehicle
+{
+private:
+	int		mileage ;			//current mileage
+	string 	tireSize ;
+	char 	fuelType ;			// ‘G’ - gasoline
+								// ‘P’ - propane
+								// ‘E’ - electric
+public:
+	//setters
+		void	setMileage(int) ;
+		void	setTireSize(string) ;
+		void	setFuelType(char) ;
+
+	//getters
+		int		getMileage() ;
+		string	getTireSize() ;
+		char	getFuelType() ;
+
+	//constructors
+		Bus() ;
+		Bus(string, string, string, string, int, char, int, string, char) ;
+
+
+	//member functions
+		void displayHead() ;
+		void displayData() ;
+		void maintenance() ;
+
+	//destructor
+		~Bus() {} ;
+};
+
+class Railcar : public Vehicle
+{
+private:
+	int		powerOnDuration ;	//current power-on time in days
+	string	motorType ;
+
+public:
+	//setters
+		void	setPOD(int) ;
+		void	setMotorType(string) ;
+
+	//getters
+		int		getPOD() ;
+		string	getMotorType() ;
+
+	//constructors
+		Railcar() ;
+		Railcar(string, string, string, string, int, char, int, string) ;
+
+	//member functions
+		void displayHead() ;
+		void displayData() ;
+		void maintenance() ;
+
+	//destructor
+		~Railcar() {} ;
+};
+
+class Helicopter : public Vehicle
+{
+private:
+	int		afFlightTime ;		//current airframe flight time in hours
+	int		engineTime ;		//current engine time, in hours
+
+public:
+	//setters
+		void	setAFFT(int);
+		void	setEngineTime(int);
+
+	//getters
+		int		getAFFT() ;
+		int		getEngineTime() ;
+
+	//constructors
+		Helicopter() ;
+		Helicopter(string, string, string, string, int, char, int, int) ;
+
+	//member functions
+		void displayHead() ;
+		void displayData() ;
+		void maintenance() ;
+
+	//destructor
+		~Helicopter() {} ;
+};
+
+
+#endif /* VEHICLE_MORE_H_ */

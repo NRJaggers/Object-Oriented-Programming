@@ -1,0 +1,63 @@
+18:52:54 **** Clean-only build of configuration Debug for project Sandbox ****
+rm -rf src/Sandbox.o Sandbox.exe src/Sandbox.d 
+rm: cannot remove `Sandbox.exe': Permission denied
+18:53:05 **** Rebuild of configuration Debug for project Sandbox ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sandbox.o" "..\\src\\Sandbox.cpp" 
+g++ -o Sandbox.exe "src\\Sandbox.o" 
+Info: Nothing to build for Sandbox
+11:58:59 **** Incremental Build of configuration Debug for project Sandbox ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sandbox.o" "..\\src\\Sandbox.cpp" 
+g++ -o Sandbox.exe "src\\Sandbox.o" 
+Info: Nothing to build for Sandbox
+11:59:22 **** Incremental Build of configuration Debug for project Sandbox ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sandbox.o" "..\\src\\Sandbox.cpp" 
+g++ -o Sandbox.exe "src\\Sandbox.o" 
+Info: Nothing to build for Sandbox
+11:59:47 **** Incremental Build of configuration Debug for project Sandbox ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sandbox.o" "..\\src\\Sandbox.cpp" 
+g++ -o Sandbox.exe "src\\Sandbox.o" 
+Info: Nothing to build for Sandbox
+12:02:35 **** Incremental Build of configuration Debug for project Sandbox ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sandbox.o" "..\\src\\Sandbox.cpp" 
+g++ -o Sandbox.exe "src\\Sandbox.o" 
+Info: Nothing to build for Sandbox
+12:03:01 **** Incremental Build of configuration Debug for project Sandbox ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sandbox.o" "..\\src\\Sandbox.cpp" 
+g++ -o Sandbox.exe "src\\Sandbox.o" 
+Info: Nothing to build for Sandbox
+19:08:52 **** Rebuild of configuration Debug for project JaggersA3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Payroll.o" "..\\src\\Payroll.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\goodbye.o" "..\\src\\goodbye.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\JaggersA3.o" "..\\src\\JaggersA3.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\welcome.o" "..\\src\\welcome.cpp" 
+g++ -o JaggersA3.exe "src\\JaggersA3.o" "src\\Payroll.o" "src\\goodbye.o" "src\\welcome.o" 
+Info: Nothing to build for Sandbox
+Info: Nothing to build for JaggersA3
+17:40:25 **** Incremental Build of configuration Debug for project 11-18_Templates ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\11-18_Templates.o" "..\\src\\11-18_Templates.cpp" 
+..\src\11-18_Templates.cpp: In function 'int main()':
+..\src\11-18_Templates.cpp:39:14: warning: 'a' is used uninitialized in this function [-Wuninitialized]
+     test.swap(a, b);
+     ~~~~~~~~~^~~~~~
+..\src\11-18_Templates.cpp:39:14: warning: 'b' is used uninitialized in this function [-Wuninitialized]
+g++ -o 11-18_Templates.exe "src\\11-18_Templates.o" 
+17:40:29 **** Incremental Build of configuration Debug for project JaggersA3 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\JaggersA3.o" "..\\src\\JaggersA3.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Payroll.o" "..\\src\\Payroll.cpp" 
+g++ -o JaggersA3.exe "src\\JaggersA3.o" "src\\Payroll.o" "src\\goodbye.o" "src\\welcome.o" 
+Info: Nothing to build for Sandbox
+Info: Nothing to build for 11-18_Templates
+12:34:40 **** Rebuild of configuration Debug for project Sandbox ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sandbox.o" "..\\src\\Sandbox.cpp" 
+g++ -o Sandbox.exe "src\\Sandbox.o" 
+Info: Nothing to build for Sandbox

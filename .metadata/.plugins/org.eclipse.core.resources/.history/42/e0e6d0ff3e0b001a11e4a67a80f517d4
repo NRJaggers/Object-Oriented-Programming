@@ -1,0 +1,289 @@
+/*
+ * Vehicle&More.cpp
+ *
+ *  Created on: Nov 12, 2019
+ *      Author: Nathan Jaggers
+ */
+
+#include <iostream>
+#include <iomanip>
+#include "Vehicle&More.h"
+using namespace std;
+
+//---Vehicle---//
+
+//setters
+		void	Vehicle :: setVehicleID(string tempVID)
+			{
+				vehicleID = tempVID ;
+			}
+		void	Vehicle :: setManufacturer(string tempManufacturer)
+			{
+				manufacturer = tempManufacturer ;
+			}
+		void	Vehicle :: setLastServiceDate(string tempLSD)
+			{
+				lastServiceDate = tempLSD ;
+			}
+		void	Vehicle :: setLastInspectDate(string tempLTD)
+			{
+				lastInspectDate = tempLTD ;
+			}
+		void	Vehicle :: setCapacity(int tempCapacity)
+			{
+				capacity = tempCapacity ;
+			}
+		void	Vehicle :: setStatus(char tempStatus)
+			{
+				status = tempStatus ;
+			}
+
+	//getters
+		string	Vehicle :: getVehicleID()
+			{
+				return vehicleID ;
+			}
+		string	Vehicle :: getManufacturer()
+			{
+				return manufacturer ;
+			}
+		string	Vehicle :: getLastServiceDate()
+			{
+				return lastServiceDate ;
+			}
+		string	Vehicle :: getLastInspectDate()
+			{
+				return lastInspectDate ;
+			}
+		int		Vehicle :: getCapacity()
+			{
+				return	capacity ;
+			}
+		char	Vehicle :: getStatus()
+			{
+				return	status ;
+			}
+
+	//constructors
+		Vehicle :: Vehicle()
+			{
+				vehicleID = "" ;
+				manufacturer = "" ;
+				lastServiceDate = "" ;
+				lastInspectDate = "" ;
+				capacity = 0 ;
+				status = '0' ;
+			}
+		Vehicle :: Vehicle(string cVID, string cManfac, string cLSD, string cLID, int cCap, char cStat)
+			{
+				vehicleID = cVID ;
+				manufacturer = cManfac ;
+				lastServiceDate = cLSD ;
+				lastInspectDate = cLID ;
+				capacity = cCap ;
+				status = cStat ;
+			}
+
+	//member functions
+		void  Vehicle :: displayHead()
+			{
+
+				cout << "\n--------------------------------------------------------------------------------------\n" ;
+				cout << setw(12) << "Vehicle ID" ;
+				cout << setw(16) << "Manufacturer" ;
+				cout << setw(19) << "Last Service Date" ;
+				cout << setw(19) << "Last Inspect Date" ;
+				cout << setw(10) << "Capacity" ;
+				cout << setw(8)  << "Status" ;
+				cout << "\n--------------------------------------------------------------------------------------\n" ;
+			}
+		void  Vehicle :: displayData()
+			{
+				cout << setw(9)  << getVehicleID() ;
+				cout << setw(25) << getManufacturer() ;
+				cout << setw(8)  << getLastServiceDate() ;
+				cout << setw(20) << getLastInspectDate() ;
+				cout << setw(11) << getCapacity() ;
+				cout << setw(8)  << getStatus() ;
+			}
+
+	//destructor
+
+//---Bus---//
+
+//setters
+	void	Bus :: setMileage(int tempMileage)
+		{
+			mileage = tempMileage ;
+		}
+	void	Bus :: setTireSize(string tempTireSize)
+		{
+			tireSize = tempTireSize ;
+		}
+	void	Bus :: setFuelType(char tempFuelType)
+		{
+			fuelType = tempFuelType ;
+		}
+
+//getters
+	int		Bus :: getMileage()
+		{
+			return mileage ;
+		}
+	string	Bus :: getTireSize()
+		{
+			return tireSize ;
+		}
+	char	Bus :: getFuelType()
+		{
+			return fuelType ;
+		}
+
+//constructors
+	Bus :: Bus() : Vehicle()
+		{
+			mileage = 0 ;
+			tireSize = "" ;
+			fuelType = '0' ;
+		}
+	Bus :: Bus(string bVID, string bM, string bLSD, string bLID, int bC, char bS, int bMileage, string bTS, char bFT) : Vehicle(bVID, bM, bLSD, bLID, bC, bS)
+		{
+			mileage = bMileage ;
+			tireSize = bTS ;
+			fuelType = bFT ;
+		}
+
+
+//member functions
+	void  Bus :: displayHead()
+				{
+
+					cout << "\n--------------------------------------------------------------------------------------\n" ;
+					cout << setw(12) << "Vehicle ID" ;
+					cout << setw(16) << "Manufacturer" ;
+					cout << setw(19) << "Last Service Date" ;
+					cout << setw(19) << "Last Inspect Date" ;
+					cout << setw(10) << "Capacity" ;
+					cout << setw(8)  << "Status" ;
+					cout << "\n--------------------------------------------------------------------------------------\n" ;
+				}
+
+	void  Bus :: displayData()
+				{
+
+					cout << setw(9)  << getVehicleID() ;
+					cout << setw(25) << getManufacturer() ;
+					cout << setw(8) << getLastServiceDate() ;
+					cout << setw(20) << getLastInspectDate() ;
+					cout << setw(11) << getCapacity() ;
+					cout << setw(8)  << getStatus() ;
+				}
+//destructor
+
+//---Railcar---//
+
+//setters
+	void	Railcar :: setPOD(int tempPOD)
+		{
+			powerOnDuration = tempPOD ;
+		}
+	void	Railcar :: setMotorType(string tempMT)
+		{
+			motorType = tempMT ;
+		}
+
+//getters
+	int		Railcar :: getPOD()
+		{
+			return powerOnDuration ;
+		}
+	string	Railcar :: getMotorType()
+		{
+			return motorType ;
+		}
+
+//constructors
+	Railcar :: Railcar() : Vehicle()
+		{
+			powerOnDuration = 0 ;
+			motorType = "" ;
+		}
+
+	Railcar :: Railcar(string rVID, string rM, string rLSD, string rLID, int rC, char rS, int rPOD, string rMT) : Vehicle(rVID, rM, rLSD, rLID, rC, rS)
+		{
+			powerOnDuration = rPOD ;
+			motorType = rMT ;
+		}
+
+//member functions
+	void  Vehicle :: displayHead()
+				{
+
+					cout << "\n--------------------------------------------------------------------------------------\n" ;
+					cout << setw(12) << "Vehicle ID" ;
+					cout << setw(16) << "Manufacturer" ;
+					cout << setw(19) << "Last Service Date" ;
+					cout << setw(19) << "Last Inspect Date" ;
+					cout << setw(10) << "Capacity" ;
+					cout << setw(8)  << "Status" ;
+					cout << "\n--------------------------------------------------------------------------------------\n" ;
+				}
+
+	void  Railcar :: displayData()
+				{
+					cout << setw(9)  << getVehicleID() ;
+					cout << setw(25) << getManufacturer() ;
+					cout << setw(8) << getLastServiceDate() ;
+					cout << setw(20) << getLastInspectDate() ;
+					cout << setw(11) << getCapacity() ;
+					cout << setw(8)  << getStatus() ;
+				}
+//destructor
+
+//---Helicopter---//
+
+//setters
+	void	Helicopter :: setAFFT(int tempAFFT)
+		{
+			afFlightTime = tempAFFT ;
+		}
+	void	Helicopter :: setEngineTime(int tempET)
+		{
+			engineTime = tempET ;
+		}
+
+//getters
+	int		Helicopter :: getAFFT()
+		{
+			return afFlightTime ;
+		}
+	int		Helicopter :: getEngineTime()
+		{
+			return engineTime ;
+		}
+
+//constructors
+	Helicopter :: Helicopter() : Vehicle()
+		{
+			afFlightTime = 0;
+			engineTime = 0 ;
+		}
+	Helicopter :: Helicopter(string hVID, string hM, string hLSD, string hLID, int hC, char hS, int hAFFT, int hET) : Vehicle(hVID, hM, hLSD, hLID, hC, hS)
+		{
+			afFlightTime = hAFFT;
+			engineTime = hET ;
+		}
+
+//member functions
+	void  Helicopter :: displayData()
+				{
+					cout << setw(9)  << getVehicleID() ;
+					cout << setw(25) << getManufacturer() ;
+					cout << setw(8) << getLastServiceDate() ;
+					cout << setw(20) << getLastInspectDate() ;
+					cout << setw(11) << getCapacity() ;
+					cout << setw(8)  << getStatus() ;
+				}
+//destructor
+
+

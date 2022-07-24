@@ -1,0 +1,9 @@
+08:20:45 **** Rebuild of configuration Debug for project 11-04_Inheritance ****
+Info: Internal Builder is used for build
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ProduceItem.o" "..\\src\\ProduceItem.cpp" 
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\GroceryItem.o" "..\\src\\GroceryItem.cpp" 
+g++ -std=c++0x -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ -o 11-04_Inheritance.exe "src\\GroceryItem.o" "src\\ProduceItem.o" "src\\main.o" 
+
+08:20:47 Build Finished. 0 errors, 0 warnings. (took 1s.618ms)
+

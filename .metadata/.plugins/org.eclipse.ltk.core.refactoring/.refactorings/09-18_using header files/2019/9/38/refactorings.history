@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;9-18_using header files/src/9-18_tempName.cpp&apos; to &apos;9-18_using header files.cpp&apos;" description="Rename resource &apos;9-18_tempName.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/9-18_tempName.cpp" name="9-18_using header files.cpp" stamp="1568825878984" updateReferences="true"/>
+</session>

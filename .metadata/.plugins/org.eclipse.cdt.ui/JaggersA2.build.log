@@ -1,0 +1,13 @@
+19:48:01 **** Rebuild of configuration Debug for project JaggersA2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ageCalc.o" "..\\src\\ageCalc.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\goodbye.o" "..\\src\\goodbye.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\displayHeading.o" "..\\src\\displayHeading.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\JaggersA2.o" "..\\src\\JaggersA2.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\dataTransfer.o" "..\\src\\dataTransfer.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\welcome.o" "..\\src\\welcome.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\displayData.o" "..\\src\\displayData.cpp" 
+g++ -o JaggersA2.exe "src\\JaggersA2.o" "src\\ageCalc.o" "src\\dataTransfer.o" "src\\displayData.o" "src\\displayHeading.o" "src\\goodbye.o" "src\\welcome.o" 
+
+19:48:11 Build Finished. 0 errors, 0 warnings. (took 9s.778ms)
+

@@ -1,0 +1,171 @@
+//============================================================================
+// Name        : JaggersA1.cpp
+// Author      : Nathan Jaggers
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+void welcome ();
+void goodbye ();
+void dynAlloc (int, int * &) ;
+void insertionSort (int *, int, int *) ;
+void displayArray (int *, int) ;
+int linearSearch (int *, int, int, int &) ;
+int binarySearch (int *, int, int, int &) ;
+void displayResults (int, int, int);
+
+int main()
+{
+	int * arrayUS = NULL, * arrayS = NULL; 				// arrayUS = unsorted array, arrayS = sorted array
+	int size = 10, searchValue = 0 ;					// size = size of array, searchValue = value set by user
+	int iterations = 0, indexFound = 0 ;				// iterations = holds number of repetitions of the search
+														// indexFound = holds index value for searchValue, if found (may or may not use)
+
+	welcome() ;
+
+	cout << "Allocating space for arrays...\n\n" ;
+	dynAlloc(size ,arrayUS) ;							// allocate memory to arrayUS
+	dynAlloc(size ,arrayS)  ;							// allocate memory to arrayS
+
+	cout << "Initializing arrays with random numbers 1-100...\n\n";
+	srand(time(0)) ;									// initialize random to seed time of zero
+
+	for (int i = 0 ; i < size ; i++ )
+		{
+			arrayUS[i] = (rand()% 100) ;
+		}
+
+	cout << "Unsorted array : \n" ;
+	displayArray(arrayUS, size);
+
+	cout << "Sorting array...\n\n" ;
+	insertionSort(arrayUS, size, arrayS) ;
+	cout << "Sorted array : \n" ;
+	displayArray(arrayS, size) ;
+
+	while ( searchValue >= 0)
+	{
+		cout << "Enter an positive integer to search for or negative number to exit : " ;
+		cin  >> searchValue ;
+
+		if (searchValue >= 0 )
+		{
+			cout << "\nInvoking Linear Search on sorted array:" ;
+			indexFound = linearSearch (arrayS, size, searchValue, iterations) ;
+			displayResults(searchValue, indexFound, iterations) ;
+
+			cout << "Invoking Linear Search on unsorted array:" ;
+			indexFound = linearSearch (arrayUS, size, searchValue, iterations) ;
+			displayResults(searchValue, indexFound, iterations) ;
+
+//			cout << "Invoking Binary Search on sorted array:" ;
+//			indexFound = binarySearch (arrayS, size, searchValue, iterations) ;
+//			displayResults(searchValue, indexFound, iterations) ;
+		}
+
+	}
+
+
+	goodbye();
+
+	return 0;
+}
+void welcome ()
+{
+	cout << "Hello and Welcome to the program! \n\n"
+		 << "short description goes here \n"
+		 << "Have fun! (Click enter to continue) \n"
+		 << "***************************************\n\n";
+	cin.ignore();
+}
+void goodbye ()
+{
+	cout << "\n\n***************************************\n\n"
+		 << "Thank you and have a wonderful rest of your day!" ;
+}
+void dynAlloc (int sizeAlloc, int * &arrayLoc)
+{
+	arrayLoc = new int[sizeAlloc] ;			// sizeAlloc = size of memory to allocate to array,
+											// arrayLoc  = pointer to location of first element in array
+	return ;
+}
+void insertionSort (int *unsorted, int arraySize, int *sorted)
+{
+	int sortThis ;
+
+	for (int i = 0 ; i < arraySize ; i++)
+		{
+			sorted[i] = unsorted[i] ;
+		}
+
+	for (int x = 1, y ; x < arraySize ; x++)
+	{
+		sortThis = sorted[x] ;
+
+		for (y = x; (y > 0) and (sortThis < sorted[y-1]) ; y--)
+		{
+			sorted[y] = sorted[y-1] ;
+
+			//displayArray(sorted, arraySize);	// trouble shooting ; see how sort works
+			//cout<< endl ;
+		}
+		sorted[y] = sortThis ;
+	}
+
+
+	return ;
+}
+void displayArray (int * array, int arraySize)
+{
+	for (int i = 0 ; i < arraySize ; i++)
+		{
+			cout << array[i] << "\t" ;
+
+			if ((i+1)%5 == 0)
+			{
+				cout << endl << endl ;
+			}
+		}
+	return ;
+}
+int linearSearch (int *array, int arraySize, int value, int &repetitions)
+{
+	int index = -1 ;
+
+	//cout << "\n\nsearch value: " << value << endl ; 	// trouble shooting code
+	for (repetitions = 1 ; repetitions < arraySize ; repetitions++)
+	{
+		//cout << array[repetitions -1] << " " ;			// trouble shooting code
+
+		if (value == array[repetitions - 1])
+		{
+			index = (repetitions - 1) ;
+			break ;
+		}
+	}
+
+	return index ;
+}
+int binarySearch (int *, int, int, int &)
+{
+
+	//return ;
+}
+void displayResults (int value, int index, int repetitions)
+{
+	if (index != -1)
+	{
+		cout << endl << "The value " << value << " was found at index: " << index << endl ;
+		cout << "Number of iterations: " << repetitions << endl << endl ;
+	}
+	else
+	{
+		cout << endl << "The value " << value << " was not found in the array."<< endl << endl ;
+	}
+}

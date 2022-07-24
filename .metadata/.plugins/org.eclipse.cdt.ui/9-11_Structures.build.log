@@ -1,0 +1,14 @@
+10:54:40 **** Incremental Build of configuration Debug for project 9-11_Structures ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\9-11_Structures.o" "..\\src\\9-11_Structures.cpp" 
+..\src\9-11_Structures.cpp: In function 'int main()':
+..\src\9-11_Structures.cpp:36:6: warning: unused variable 'i' [-Wunused-variable]
+  int i ;
+      ^
+..\src\9-11_Structures.cpp:37:8: warning: unused variable 'f' [-Wunused-variable]
+  float f ;
+        ^
+g++ -o 9-11_Structures.exe "src\\9-11_Structures.o" 
+
+10:54:42 Build Finished. 0 errors, 2 warnings. (took 1s.162ms)
+

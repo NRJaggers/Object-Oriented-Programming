@@ -1,0 +1,8 @@
+10:17:49 **** Incremental Build of configuration Debug for project 10-14_GroceryItem_Update ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\10-14_.o" "..\\src\\10-14_.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\GroceryItem.o" "..\\src\\GroceryItem.cpp" 
+g++ -o 10-14_GroceryItem_Update.exe "src\\10-14_.o" "src\\GroceryItem.o" 
+
+10:17:50 Build Finished. 0 errors, 0 warnings. (took 1s.58ms)
+

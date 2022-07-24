@@ -1,0 +1,12 @@
+08:30:51 **** Incremental Build of configuration Debug for project 9-30_Temp ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Circle.o" "..\\src\\Circle.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\9-30_Temp.o" "..\\src\\9-30_Temp.cpp" 
+..\src\9-30_Temp.cpp: In function 'int main()':
+..\src\9-30_Temp.cpp:24:7: warning: variable 'd' set but not used [-Wunused-but-set-variable]
+ float d;
+       ^
+g++ -o 9-30_Temp.exe "src\\9-30_Temp.o" "src\\Circle.o" 
+
+08:30:52 Build Finished. 0 errors, 1 warnings. (took 1s.28ms)
+

@@ -1,0 +1,5 @@
+08:51:41 **** Clean-only build of configuration Debug for project 9-23_C-strings ****
+rm -rf src/9-23_C-strings.d 9-23_C-strings.exe src/9-23_C-strings.o 
+
+08:51:41 Build Finished. 0 errors, 0 warnings. (took 254ms)
+

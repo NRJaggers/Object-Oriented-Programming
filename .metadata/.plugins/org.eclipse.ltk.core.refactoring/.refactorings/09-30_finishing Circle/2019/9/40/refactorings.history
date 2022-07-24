@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;9-30_finishing Circle/src/9-30_Temp.cpp&apos; to &apos;9-30_finishing Circle.cpp&apos;" description="Rename resource &apos;9-30_Temp.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/9-30_Temp.cpp" name="9-30_finishing Circle.cpp" stamp="1569858040647" updateReferences="true"/>
+</session>

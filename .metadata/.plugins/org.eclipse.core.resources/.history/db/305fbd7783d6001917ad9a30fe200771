@@ -1,0 +1,36 @@
+//============================================================================
+// Name        : Sandbox.cpp
+// Author      : Nathan Jaggers
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+using namespace std;
+
+class Banana
+{
+private:
+        string s;
+
+        int y;
+
+public:
+bool theMemberFunc (string);
+
+void setterForS(string);      // setter for s
+
+string getterForS();               // getter for s
+
+};
+void func(Banana) ;
+int main() {
+
+
+	return 0;
+}
+void func(Banana co)
+{
+
+}
